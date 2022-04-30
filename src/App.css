@@ -12,6 +12,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  box-shadow: 1px 1px 1px gray;
 }
 
 .menu-links {
@@ -23,4 +24,11 @@
 
 .menu-links a {
   text-decoration: none;  
+}
+
+.books-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
