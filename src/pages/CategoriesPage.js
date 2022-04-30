@@ -2,7 +2,7 @@ import React from 'react';
 
 const CategoriesPage = () => {
   return (
-    <h2>Categories page</h2>
+    <button type="button">Check Status</button>
   );
 }
 
