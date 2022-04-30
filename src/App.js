@@ -8,14 +8,14 @@ import './App.css';
 
 const App = () => {
   return (
-    <>
+    <div className="main-container">
       <Navbar />
       <Routes>
         <Route path="/" exact element={<BooksPage /> } />
         <Route path="/categories" element={<CategoriesPage /> } />
         <Route path="*" element={<NoMatch />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

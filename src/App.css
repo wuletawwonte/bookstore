@@ -2,3 +2,25 @@
   margin: 0;
   padding: 0;
 }
+
+.main-container {
+  padding: 50px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.menu-links {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  font-size: 25px;
+}
+
+.menu-links a {
+  text-decoration: none;  
+}
