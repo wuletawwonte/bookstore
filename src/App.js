@@ -1,12 +1,21 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import BooksPage from './pages/BooksPage';
+import CategoriesPage from './pages/CategoriesPage';
+import NoMatch from './pages/NoMatch';
 import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
-      <h2>Hello there</h2>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" exact element={<BooksPage /> } />
+        <Route path="/categories" element={<CategoriesPage /> } />
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
+    </>
   );
 }
 
