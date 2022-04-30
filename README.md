@@ -1,8 +1,18 @@
-# Getting Started with Create React App
+# Bookstore
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bookstore is a website that displays a list of books, Registers a book, and removes a book if requested. 
 
-## Available Scripts
+## Built With
+
+- Major languages: Javascript
+- Frameworks: [ReactJS](https://reactjs.org/)
+- Technologies used: [Webpack](https://webpack.js.org/), [Babel](https://babeljs.io/), [React-router-dom](https://reactrouter.com/)
+
+## Live Demo (if available)
+
+[Live Demo Link](https://wuletawwonte.github.io)
+
+## Getting Started
 
 In the project directory, you can run:
 
@@ -68,3 +78,25 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Author
+
+👤 **Wuletaw Wonte**
+
+- GitHub: [@wuletawwonte](https://github.com/wuletawwonte)
+- Twitter: [@wuletaww](https://twitter.com/wuletaww)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/wuletaw-wonte)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+All source code files are licensed under the permissive **[MIT](./LICENSE.md)** License unless marked differently in a particular folder/file.
