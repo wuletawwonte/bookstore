@@ -6,17 +6,15 @@ import CategoriesPage from './pages/CategoriesPage';
 import NoMatch from './pages/NoMatch';
 import './App.css';
 
-const App = () => {
-  return (
-    <div className="main-container">
-      <Navbar />
-      <Routes>
-        <Route path="/" exact element={<BooksPage /> } />
-        <Route path="/categories" element={<CategoriesPage /> } />
-        <Route path="*" element={<NoMatch />} />
-      </Routes>
-    </div>
-  );
-}
+const App = () => (
+  <div className="main-container">
+    <Navbar />
+    <Routes>
+      <Route path="/" exact element={<BooksPage />} />
+      <Route path="/categories" element={<CategoriesPage />} />
+      <Route path="*" element={<NoMatch />} />
+    </Routes>
+  </div>
+);
 
 export default App;
