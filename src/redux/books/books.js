@@ -3,5 +3,17 @@ const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
 // Action creators
-const addBook = (title) => ({ type: ADD_BOOK, payload: { title },});
+const addBook = (book) => ({ type: ADD_BOOK, payload: book,});
 const removeBook = (id) => ({ type: REMOVE_BOOK, payload: { id },});
+
+// Reducer
+export default reducer = (state = [], action) => {
+  switch(action.type) {
+    case ADD_BOOK:
+      return [...state, { id: state.length, name: action.payload.name, author: action.payload.author }];
+    case REMOVE_BOOK:
+      return state.filter(book => book.id !== action.payload.id);
+    default:
+      return state;
+  }
+}
