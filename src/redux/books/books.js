@@ -13,8 +13,8 @@ const books = (state = initialData, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [...state, {
-        id: state.length,
-        name: action.payload.name,
+        id: state.length + 1,
+        title: action.payload.title,
         author: action.payload.author,
       }];
     case REMOVE_BOOK:
