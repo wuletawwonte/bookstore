@@ -19,12 +19,18 @@ export const getBooksLoading = () => ({ type: GET_BOOKS_LOADING });
 export const getBooks = () => (dispatch) => {
   dispatch(getBooksLoading());
   fetch(url)
-    .then((response) => response.json)
+    .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      const formattedBooks = [];
+      Object.keys(data).forEach((key) => {
+        if (key) {
+          formattedBooks.push({ ...data[key][0], item_id: key });
+        }
+      });
+      dispatch(getBooksSuccess(formattedBooks));
     })
     .catch((err) => {
-      console.log(err.message);
+      dispatch(getBooksFailure(err.message));
     });
 };
 
@@ -46,7 +52,7 @@ const books = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        error: payload,
+        error: action.payload,
       };
     case ADD_BOOK:
       return {

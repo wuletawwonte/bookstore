@@ -4,24 +4,31 @@ import { getBooks } from '../redux/books/books';
 import Book from './Book';
 
 const BookList = () => {
-  const books = useSelector((state) => state.books);
-  const dispatch = useDispatch;
+  const { books, loading } = useSelector((state) => state.books);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getBooks());
-  });
+  }, [dispatch]);
+
+  let content = <h2>Loading...</h2>;
+  if (loading) {
+    content = <h2>Loading</h2>;
+  } else {
+    content = books.map((book) => (
+      <Book
+        key={book.item_id}
+        id={book.item_id}
+        title={book.title}
+        author={book.author}
+      />
+    ));
+  }
 
   return (
     <div>
       <ul className="books-list">
-        {books.map((book) => (
-          <Book
-            key={book.id}
-            id={book.id}
-            title={book.title}
-            author={book.author}
-          />
-        ))}
+        {content}
       </ul>
     </div>
   );
