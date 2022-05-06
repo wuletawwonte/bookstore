@@ -5,7 +5,7 @@
 }
 
 .progress-container h3 {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 2rem;
   color: var(--black-two);
 }
@@ -17,12 +17,12 @@
 
 .progress-container p {
   opacity: 0.5;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 0.875rem;
   color: var(--black-two);
 }
 
 .percentage-holder {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
