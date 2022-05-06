@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
+import Progress from './Progress';
 import './Book.css';
 
 const Book = (props) => {
@@ -24,6 +25,14 @@ const Book = (props) => {
           <button type="button">Comments</button>
           <button type="button" onClick={deleteHandler}>Remove</button>
           <button type="button">Edit</button>
+        </div>
+      </div>
+      <div className="card-progress">
+        <Progress />
+        <div className="current-position">
+          <h2>CURRENT CHAPTER</h2>
+          <h3>Chapter 3: &quot;A Lesson Learned&quot;</h3>
+          <button type="button">UPDATE PROGRESS</button>
         </div>
       </div>
     </div>
