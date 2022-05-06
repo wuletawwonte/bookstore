@@ -10,11 +10,24 @@ const GET_BOOKS_FAILURE = 'bookstore/GET_BOOKS_FAILURE';
 const GET_BOOKS_LOADING = 'bookstore/GET_BOOKS_LOADING';
 
 // Action creators
-export const addBook = (book) => ({ type: ADD_BOOK, payload: book });
 export const removeBook = (id) => ({ type: REMOVE_BOOK, payload: id });
 export const getBooksSuccess = (books) => ({ type: GET_BOOKS_SUCCESS, payload: books });
 export const getBooksFailure = (errMessage) => ({ type: GET_BOOKS_FAILURE, payload: errMessage });
 export const getBooksLoading = () => ({ type: GET_BOOKS_LOADING });
+export const addBook = (book) => ({ type: ADD_BOOK, payload: book });
+
+export const registerNewBook = (newBook) => (dispatch) => {
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newBook),
+  })
+    .then(() => {
+      dispatch(addBook(newBook));
+    });
+};
 
 export const getBooks = () => (dispatch) => {
   dispatch(getBooksLoading());
@@ -56,12 +69,9 @@ const books = (state = initialState, action) => {
       };
     case ADD_BOOK:
       return {
-        status: '',
-        books: [...state.books, {
-          id: state.books.length + 1,
-          title: action.payload.title,
-          author: action.payload.author,
-        }],
+        ...state,
+        loading: false,
+        books: [...state.books, action.payload],
       };
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.payload.id);

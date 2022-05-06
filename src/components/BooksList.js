@@ -11,9 +11,9 @@ const BookList = () => {
     dispatch(getBooks());
   }, [dispatch]);
 
-  let content = <h2>Loading...</h2>;
+  let content = null;
   if (loading) {
-    content = <h2>Loading</h2>;
+    content = <h2>Loading...</h2>;
   } else {
     content = books.map((book) => (
       <Book
