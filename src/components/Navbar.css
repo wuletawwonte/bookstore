@@ -1,7 +1,28 @@
 .navbar {
+  height: 3.938rem;
+  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
+  background-color: var(--white);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1px var(--grey-border);
+}
+
+.name-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.name-menu h1 {
+  font-size: 1.8rem;
+  color: var(--azure);
+}
+
+.user-icon {
+  border: solid 1px var(--grey-border);
+  border-radius: 50%;
   padding: 10px;
-  box-shadow: 1px 1px 1px gray;
+  cursor: pointer;
+  color: var(--azure);
 }
