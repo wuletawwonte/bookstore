@@ -1,0 +1,39 @@
+.navbar {
+  height: 3.938rem;
+  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1px var(--grey-border);
+}
+
+.name-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.name-menu h1 {
+  font-size: 1.8rem;
+  color: var(--azure);
+}
+
+.menu-item {
+  color: var(--black);
+  opacity: 0.5;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.menu-item.active {
+  opacity: 1;
+}
+
+.user-icon {
+  border: solid 1px var(--grey-border);
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  color: var(--azure);
+}
