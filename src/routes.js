@@ -2,12 +2,12 @@ const links = [
   {
     id: 1,
     path: '/',
-    text: 'Books',
+    text: 'BOOKS',
   },
   {
     id: 2,
     path: '/categories',
-    text: 'Categories',
+    text: 'CATEGORIES',
   },
 ];
 

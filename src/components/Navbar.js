@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaUser } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import links from '../routes';
 import './Navbar.css';
 
@@ -12,7 +12,7 @@ const Navbar = () => (
         <ul className="menu-links">
           {links.map((link) => (
             <li key={link.id}>
-              <Link to={link.path}>{link.text}</Link>
+              <NavLink className={({ isActive }) => (isActive ? 'menu-item active' : 'menu-item inactive')} to={link.path}>{link.text}</NavLink>
             </li>
           ))}
 
