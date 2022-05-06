@@ -4,30 +4,15 @@ const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstor
 
 // Action types
 const ADD_BOOK = 'bookstore/ADD_BOOK';
-const REMOVE_BOOK = 'bookstore/REMOVE_BOOK';
 const GET_BOOKS_SUCCESS = 'bookstore/GET_BOOKS_SUCCESS';
 const GET_BOOKS_FAILURE = 'bookstore/GET_BOOKS_FAILURE';
 const GET_BOOKS_LOADING = 'bookstore/GET_BOOKS_LOADING';
 
 // Action creators
-export const removeBook = (id) => ({ type: REMOVE_BOOK, payload: id });
 export const getBooksSuccess = (books) => ({ type: GET_BOOKS_SUCCESS, payload: books });
 export const getBooksFailure = (errMessage) => ({ type: GET_BOOKS_FAILURE, payload: errMessage });
 export const getBooksLoading = () => ({ type: GET_BOOKS_LOADING });
 export const addBook = (book) => ({ type: ADD_BOOK, payload: book });
-
-export const registerNewBook = (newBook) => (dispatch) => {
-  fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(newBook),
-  })
-    .then(() => {
-      dispatch(addBook(newBook));
-    });
-};
 
 export const getBooks = () => (dispatch) => {
   dispatch(getBooksLoading());
@@ -44,6 +29,28 @@ export const getBooks = () => (dispatch) => {
     })
     .catch((err) => {
       dispatch(getBooksFailure(err.message));
+    });
+};
+
+export const removeBook = (id) => (dispatch) => {
+  fetch(`${url}/${id}`, {
+    method: 'DELETE',
+  })
+    .then(() => {
+      dispatch(getBooks());
+    });
+};
+
+export const registerNewBook = (newBook) => (dispatch) => {
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newBook),
+  })
+    .then(() => {
+      dispatch(addBook(newBook));
     });
 };
 
@@ -73,8 +80,6 @@ const books = (state = initialState, action) => {
         loading: false,
         books: [...state.books, action.payload],
       };
-    case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload.id);
     default:
       return state;
   }
