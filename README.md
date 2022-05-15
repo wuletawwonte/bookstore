@@ -10,7 +10,8 @@
 
 ## Live Demo
 
-[Live Demo Link](https://wuletawwonte.github.io/bookstore)
+[Live Demo Link](https://wuletaw-bookstore.netlify.app/)
+![boostore](https://user-images.githubusercontent.com/12524453/168478584-d8e7a900-0f40-42b9-8bf2-7c61d1060989.png)
 
 ## Getting Started
 
